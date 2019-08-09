@@ -1,10 +1,11 @@
 {
   "name": "lapress-frontend-core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "git@github.com:lapress/frontend-core.git",
   "author": "Sebastian Szczepanski <sebastian@ably.pl>",
   "license": "MIT",
+  "files": ["src/*"],
   "dependencies": {
     "vue-blu": "^0.1.9"
   }
