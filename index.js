@@ -1,3 +1,4 @@
+import VueInstance from 'vue';
 import VueBlu from 'vue-blu';
 
 export default {
@@ -8,9 +9,13 @@ export default {
 
         options.modules.forEach((laPressModule) => {
             laPressModule.register(Vue);
-            config[laPressModule.key()] = laPressModule.config();
+            config[laPressModule.key()] = Object.assign(
+              laPressModule.config(),
+              options[laPressModule.key()]
+            );
         });
 
         Vue.prototype.$lapress = config;
+        Vue.prototype.$bus = new VueInstance();
     }
 };

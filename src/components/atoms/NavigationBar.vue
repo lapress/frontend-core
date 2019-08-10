@@ -37,9 +37,12 @@ export default {
   align-items: center;
   display: flex;
   background: #32373c;
+  margin-left: -20px;
   padding: 15px 20px;
 
   &__middle {
+    align-items: center;
+    display: flex;
     margin: 0 auto;
   }
 }
