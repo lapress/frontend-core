@@ -1,0 +1,37 @@
+.s-section {
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  margin: 20px 0;
+
+  .button {
+    box-shadow: none;
+  }
+
+  &__title {
+    .title {
+      color: #fff;
+      margin-bottom: 0;
+    }
+  }
+}
+.s-header {
+  display: flex;
+
+  &__right {
+    margin-left: auto;
+  }
+}
+
+.b-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.vue-grid-item {
+  .vue-resizable-handle {
+    bottom: -8px !important;
+    right: -8px !important;
+  }
+}

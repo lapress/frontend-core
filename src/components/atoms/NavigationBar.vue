@@ -8,7 +8,7 @@
         </slot>
       </div>
       <div class="header__middle">
-        <slot name="middle"></slot>
+        <slot name="middle" />
       </div>
       <div class="header__actions">
         <slot />
@@ -60,5 +60,8 @@ export default {
 .button {
   border: none;
   box-shadow: none;
+}
+.affix {
+  z-index: 10000
 }
 </style>

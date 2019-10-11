@@ -5,8 +5,18 @@
   "repository": "git@github.com:lapress/frontend-core.git",
   "author": "Sebastian Szczepanski <sebastian@ably.pl>",
   "license": "MIT",
-  "files": ["src/*"],
+  "files": [
+    "src/*"
+  ],
   "dependencies": {
-    "vue-blu": "^0.1.9"
+    "babel-runtime": "^6.26.0",
+    "element-ui": "^2.12.0",
+    "lodash.merge": "^4.6.2",
+    "vue-blu": "^0.1.9",
+    "vue-color": "^2.7.0"
+  },
+  "devDependencies": {
+    "bodybuilder": "^2.2.17",
+    "elasticsearch": "^16.3.0"
   }
 }
