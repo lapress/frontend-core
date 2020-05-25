@@ -115,7 +115,8 @@ export default {
 
       const query = bodybuilder()
         .filter('term', 'type', this.type)
-        .query('multi_match', 'fields', ['title', 'body', 'excerpt', 'categories.name', 'tags.name', 'cars.name', 'author.name'], { query: this.query });
+        .query('multi_match', 'fields', ['title', 'categories.name', 'tags.name', 'author.name'], { query: this.query });
+
 
       quickSearchByQuery({
         query,

@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="placeholder" :style="placeholderStyle" @click="open">
-      <div class="placeholder__inner">
+      <div v-if="!image || !image.src" class="placeholder__inner">
         <LpImageSvg class="placeholder__icon" color="#9DABC8" />
         Wybierz obraz
       </div>
+      <img v-else :src="image.src" alt="" class="image">
     </div>
+
   </div>
 </template>
 
@@ -40,7 +42,7 @@ export default {
   data() {
     return {
       tries: 5,
-      image: this.value || {},
+      image: typeof this.value === 'object' ? this.value : {},
       editor: null
     };
   },
@@ -73,11 +75,15 @@ export default {
         });
 
         this.editor.on('select', () => {
-          const attachment = this.editor.state().get('selection').toJSON().pop();
+          const {url, id} = this.editor.state().get('selection').toJSON().pop();
+          if (!this.image) {
+            this.image = {}
+          }
+          this.$set(this.image, 'src', url);
+          this.$set(this.image, 'id', id);
+
           // eslint-disable-next-line no-console
-          console.log('attachment', attachment);
-          this.$set(this.image, 'src', attachment.url);
-          this.$set(this.image, 'id', attachment.id);
+          console.log('@@@image', this.image)
 
           // setTimeout(() => {
           //   this.bindClickOutsideEvent();
@@ -131,5 +137,10 @@ export default {
     font-size: 14px;
     justify-content: center;
   }
+}
+.image {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 </style>

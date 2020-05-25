@@ -17,7 +17,6 @@ export const quickSearchByQuery = ({ query, start = 0, size = 12, includeFields 
   return new Promise((resolve, reject) => {
     client.search({
       index: config.data.elasticsearch.index,
-      type: 'post',
       _sourceIncludes: includeFields,
       _sourceExcludes: excludeFields,
       body
